@@ -7,8 +7,34 @@ files while being controlled by its network protocol.
 
 :+1: [easypi/mpd-arm][2] works on Raspberry Pi very well.
 
-NOTE: This is based on the approach used by vimagick/mpd and should function as
+NOTE: This is based on the approach used by [vimagick/mpd](https://github.com/vimagick/dockerfiles/tree/master/mpd) and should function as
 a drop-in replacement, despite not sharing any code.
+
+You can also find a [prebuilt image on Docker Hub](https://hub.docker.com/repository/docker/cybolic/mpd).
+
+
+## Commands
+
+Build the docker image locally:
+```
+    nix build
+```
+
+Build the custom MPD package used by the image:
+```
+    nix build '.#customMpd'
+```
+
+Build the custom MPD package with debug symbols:
+```
+    nix build '.#debugMpd'
+```
+
+If you have [direnv](https://direnv.net/) installed, you'll get a quick guide printed in your shell.
+Otherwise, you can enter the development shell manually:
+```
+    nix develop
+```
 
 ## docker-compose.yml
 
